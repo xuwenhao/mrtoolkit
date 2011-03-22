@@ -50,9 +50,9 @@ class StreamRunner
     extra << reducer.split(' ')[0]
     expand_paths(extra.uniq).each {|e| extras += "-file #{e} "}
     map_opt = ''
-    map_opts.each {|n, v| map_opt += "-jobconf #{n}=#{v} "}
+    map_opts.each {|n, v| map_opt += "-D #{n}=#{v} "}
     reduce_opt = ''
-    reduce_opts.each {|n, v| reduce_opt += "-jobconf #{n}=#{v} "}
+    reduce_opts.each {|n, v| reduce_opt += "-D #{n}=#{v} "}
     if input.class == Array
       input = input.collect {|i| "-input #{i}"}.join(" ")
     else
