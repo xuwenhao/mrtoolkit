@@ -60,6 +60,9 @@ class Stage
   def new_input(line = nil)
     input = @input_type.new
     return input unless line
+    if !line.valid_encoding?
+      line = line.unpack('C*').pack('U*')
+    end    
     fields = line.chomp.split(@in_sep)
     @in_fields.each_index { |i| input[i] = fields[i] }
     input

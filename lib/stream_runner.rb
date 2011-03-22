@@ -64,7 +64,7 @@ class StreamRunner
         "#{input} " +
 	"-output NONE " +
 	"-mapper \"ruby #{mapper}\"" +
-        "-jobconf mapred.reduce.tasks=0 " +
+        "-D mapred.reduce.tasks=0 " +
 	map_opt +
         "#{extras}"
     else
@@ -74,7 +74,7 @@ class StreamRunner
 	"-mapper \"ruby #{mapper}\" " +
 	map_opt +
 	"-reducer \"ruby #{reducer}\" " +
-        "-jobconf mapred.reduce.tasks=#{reducers} " +
+        "-D mapred.reduce.tasks=#{reducers} " +
 	reduce_opt +
         "#{extras}"
     end
