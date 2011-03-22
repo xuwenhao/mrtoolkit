@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mrtoolkit}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["cchayden", "vadimj", "jashmenn", "xuwenhao"]
@@ -45,7 +45,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/xuwenhao/mrtoolkit}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.2}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Simplify the creation of Hadoop Map/Reduce jobs}
   s.test_files = [
     "test/utest.rb",
