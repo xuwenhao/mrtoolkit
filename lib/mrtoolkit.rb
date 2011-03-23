@@ -56,17 +56,21 @@ class Stage
       @out_fd.puts outs.join(@out_sep)
     end
   end
-
+  
   def new_input(line = nil)
     input = @input_type.new
     return input unless line
     if !line.valid_encoding?
-      line = line.unpack('C*').pack('U*')
-    end    
-    fields = line.chomp.split(@in_sep)
-    @in_fields.each_index { |i| input[i] = fields[i] }
+      line = line.force_encoding Encoding::BINARY
+      fields = line.chomp.split(@in_sep)
+      @in_fields.each_index { |i| input[i] = fields[i].force_encoding Encoding::UTF_8 }
+    else
+      fields = line.chomp.split(@in_sep)
+      @in_fields.each_index { |i| input[i] = fields[i]}      
+    end
     input
   end
+  
   def new_output
     @output_type.new
   end

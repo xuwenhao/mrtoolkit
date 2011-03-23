@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mrtoolkit}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["cchayden", "vadimj", "jashmenn", "xuwenhao"]
-  s.date = %q{2011-03-22}
+  s.date = %q{2011-03-23}
   s.email = %q{wenhao.xu@gmail.com}
   s.extra_rdoc_files = [
     "README.rdoc"
