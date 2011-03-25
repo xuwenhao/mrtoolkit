@@ -61,9 +61,10 @@ class Stage
     input = @input_type.new
     return input unless line
     if !line.valid_encoding?
+      encoding = line.encoding
       line = line.force_encoding Encoding::BINARY
       fields = line.chomp.split(@in_sep)
-      @in_fields.each_index { |i| input[i] = fields[i].force_encoding Encoding::UTF_8 }
+      @in_fields.each_index { |i| input[i] = fields[i].force_encoding encoding }
     else
       fields = line.chomp.split(@in_sep)
       @in_fields.each_index { |i| input[i] = fields[i]}      
